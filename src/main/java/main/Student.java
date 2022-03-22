@@ -10,11 +10,13 @@ public class Student {
     public Student(long id, String name) {
         this.id = id;
         this.name = name;
+        this.grades = new ArrayList<>();
     }
 
-    public Student(ArrayList<Integer> grades) {
-        this.grades = grades;
+    public Student() {
+        this.grades = new ArrayList<>();
     }
+
 
     public String getName() {
         return name;
@@ -33,7 +35,12 @@ public class Student {
         this.id = id;
     }
 
-    public void addGrade(int grade){
 
+    public void addGrade(int grade) {
+        grades.add(grade);
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return grades;
     }
 }
