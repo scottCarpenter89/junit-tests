@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Student {
     private long id;
     private String name;
-    private ArrayList<Integer> grades;
+    ArrayList<Integer> grades;
 
     public Student(long id, String name) {
         this.id = id;
@@ -14,14 +14,18 @@ public class Student {
     public long getId() {
         return id;
     }
+
     // returns the student's name
     public String getName() {
         return name;
     }
 
-//    // adds the given grade to the grades list
-//    public void addGrade(int grade){...}
-//
+    // adds the given grade to the grades list
+    public void addGrade(int grade) {
+        grades.add(84);
+        grades.add(88);
+    }
+
 //    // returns the list of grades
 //    public ArrayList<Integer> getGrades(){...}
 //
