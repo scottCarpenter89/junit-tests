@@ -30,9 +30,12 @@ public class StudentTest {
     public void testAddGrade() {
         scott.addGrade(97);
         scott.addGrade(94);
-        System.out.println(scott.getGrades());
         assertEquals(97, scott.getGrades().get(0).intValue());
         assertEquals(94, scott.getGrades().get(1).intValue());
+    }
 
+    @Test
+    public void testGetGradeAverage(){
+        assertEquals("should average grades ArrayList", 95.5, scott.getGradeAverage(), .2);
     }
 }

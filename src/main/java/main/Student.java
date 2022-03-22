@@ -43,4 +43,12 @@ public class Student {
     public ArrayList<Integer> getGrades() {
         return grades;
     }
+
+    public double getGradeAverage(){
+        double average = 0;
+        for (int grade : grades) {
+           average += grade;
+        }
+        return average / grades.size();
+    }
 }
