@@ -14,9 +14,11 @@ public class Student {
     public long getId() {
         return id;
     }
-//    // // returns the student's name
-//    public String getName() {...}
-//
+    // returns the student's name
+    public String getName() {
+        return name;
+    }
+
 //    // adds the given grade to the grades list
 //    public void addGrade(int grade){...}
 //

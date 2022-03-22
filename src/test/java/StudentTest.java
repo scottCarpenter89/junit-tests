@@ -9,5 +9,8 @@ public class StudentTest {
     public void testGetId () {
         assertEquals("should test the id", 123345, student.getId());
     }
-
+@Test
+    public void testGetName () {
+        assertEquals("tests the get name method", "Scott", student.getName());
+}
 }
