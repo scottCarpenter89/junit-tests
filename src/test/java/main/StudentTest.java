@@ -1,6 +1,5 @@
 package main;
 
-import main.Student;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -10,32 +9,53 @@ import static org.junit.Assert.*;
 
 
 public class StudentTest {
-    private final Student scott = new Student();
-
-
+//    private final Student scott = new Student();
+    public static final long STUDENT_ID = 42;
+    public static final String STUDENT_NAME = "Scott";
+    public static final ArrayList<Integer> STUDENT_GRADES = new ArrayList<>(Arrays.asList(97, 94, 95));
+    public static final double STUDENT_AVERAGE = 95.3;
 
     @Test
+    public void testConstructor() {
+        Student scott = new Student(STUDENT_ID, STUDENT_NAME);
+        assertEquals(STUDENT_ID, scott.getId());
+        assertEquals(STUDENT_NAME, scott.getName());
+        assertTrue(scott.getGrades().isEmpty());
+    }
+    @Test
     public void testGetId() {
-        scott.setId(12345);
-        assertEquals("should test the id", 12345, scott.getId());
+        Student scott = new Student(STUDENT_ID, STUDENT_NAME);
+        assertEquals("should test the id", STUDENT_ID, scott.getId());
     }
 
     @Test
     public void testGetName() {
-        scott.setName("Scott");
-        assertEquals("tests the get name method", "Scott", scott.getName());
+        Student scott = new Student(STUDENT_ID, STUDENT_NAME);
+        assertEquals(STUDENT_NAME, scott.getName());
     }
 
     @Test
     public void testAddGrade() {
-        scott.addGrade(97);
-        scott.addGrade(94);
-        assertEquals(97, scott.getGrades().get(0).intValue());
-        assertEquals(94, scott.getGrades().get(1).intValue());
+        Student scott = new Student();
+        for (Integer grade : STUDENT_GRADES) {
+            scott.addGrade(grade);
+        }
+        assertEquals(STUDENT_GRADES, scott.getGrades());
     }
 
     @Test
-    public void testGetGradeAverage(){
-        assertEquals("should average grades ArrayList", 95.5, scott.getGradeAverage(), .2);
+    public void testGetGrades() {
+        Student scott = new Student(STUDENT_ID, STUDENT_NAME);
+        assertTrue(scott.getGrades().isEmpty());
     }
+    @Test
+    public void testGetGradeAverage(){
+        Student scott = new Student();
+        for (Integer grade : STUDENT_GRADES) {
+            scott.addGrade(grade);
+        }
+        assertEquals(STUDENT_AVERAGE, scott.getGradeAverage(), 1);
+    }
+
+
 }
